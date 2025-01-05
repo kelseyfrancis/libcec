@@ -574,6 +574,16 @@ uint8_t CLibCEC::AudioStatus(void)
   return m_client ? m_client->AudioStatus() : (uint8_t)CEC_AUDIO_VOLUME_STATUS_UNKNOWN;
 }
 
+bool CLibCEC::SetAudioStatus(uint8_t status)
+{
+  return m_client ? m_client->SetAudioStatus(status) : false;
+}
+
+bool CLibCEC::SetSystemAudioModeStatus(const cec_system_audio_status mode)
+{
+  return m_client ? m_client->SetSystemAudioModeStatus(mode) : false;
+}
+
 int8_t CLibCEC::DetectAdapters(cec_adapter_descriptor *deviceList, uint8_t iBufSize, const char *strDevicePath /* = nullptr */, bool bQuickScan /* = false */)
 {
   int8_t iAdaptersFound = CAdapterFactory(this).DetectAdapters(deviceList, iBufSize, strDevicePath);

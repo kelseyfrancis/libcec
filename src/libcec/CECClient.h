@@ -287,6 +287,8 @@ namespace CEC
     virtual uint8_t               AudioMute(void);
     virtual uint8_t               AudioUnmute(void);
     virtual uint8_t               AudioStatus(void);
+    virtual bool                  SetAudioStatus(uint8_t status);
+    virtual bool                  SetSystemAudioModeStatus(const cec_system_audio_status mode);
     virtual bool                  SendKeypress(const cec_logical_address iDestination, const cec_user_control_code key, bool bWait = true);
     virtual bool                  SendKeyRelease(const cec_logical_address iDestination, bool bWait = true);
     virtual std::string           GetDeviceOSDName(const cec_logical_address iAddress);

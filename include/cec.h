@@ -461,6 +461,16 @@ namespace CEC
     virtual uint8_t AudioStatus(void) = 0;
 
     /*!
+     * @brief Set the current audio status (if libCEC acting as Audio System).
+     */
+    virtual bool SetAudioStatus(uint8_t status) = 0;
+
+    /*!
+     * @brief Set the current system audio mode status (if libCEC acting as Audio System).
+     */
+    virtual bool SetSystemAudioModeStatus(const cec_system_audio_status mode) = 0;
+
+    /*!
      * @brief Try to find all connected CEC adapters.
      * @param deviceList The vector to store device descriptors in.
      * @param iBufSize The size of the deviceList buffer.
